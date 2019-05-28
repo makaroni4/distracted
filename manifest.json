@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Distracted",
+  "description": "Open source extension that helps you being focused by blocking websites (or pages)",
+  "version": "0.1",
+  "author": "Anatoli Makarevich",
+  "icons": {
+    "128": "extension_icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/vue.js",
+        "js/app.js"
+      ],
+      "css": [
+        "styles/style.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+  ],
+  "web_accessible_resources": [
+    "fonts/Roboto-Regular.ttf",
+    "styles/style.css",
+    "images/search_icon.svg",
+    "images/youtube_logo.png"
+  ]
+}

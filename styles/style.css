@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("chrome-extension://__MSG_@@extension_id__/fonts/Roboto-Regular.ttf");
+}
+
+.distracted-site-wall {
+  height: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  position: relative;
+
+  background-color: #F1F6F4;
+
+  font-family: Roboto !important;
+  font-size: 48px;
+}
