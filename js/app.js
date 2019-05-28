@@ -20,20 +20,28 @@
       methods: {
       },
       mounted() {
-        chrome.storage.local.get([APP_STORAGE_KEY], result => {
-          let appData = result[APP_STORAGE_KEY];
+        var getData = new Promise((resolve, reject) => {
+          chrome.storage.local.get([APP_STORAGE_KEY], result => {
+            let appData = result[APP_STORAGE_KEY];
 
-          if(appData) {
-            appData.totalHits += 1;
-          } else {
-            appData = {
-              totalHits: 1
+            if(appData) {
+              appData.totalHits += 1;
+            } else {
+              appData = {
+                totalHits: 1
+              }
             }
-          }
 
+            resolve(appData);
+          });
+        });
+
+        getData.then(appData => {
           this.totalHits = appData.totalHits;
 
           chrome.storage.local.set({ [APP_STORAGE_KEY]: appData });
+        }).catch(error => {
+          console.log("--> Error while getting Distracted app data", error);
         });
       },
       template: `
