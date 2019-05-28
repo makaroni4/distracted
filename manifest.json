@@ -23,6 +23,7 @@
     }
   ],
   "permissions": [
+    "storage"
   ],
   "web_accessible_resources": [
     "fonts/Roboto-Regular.ttf",
