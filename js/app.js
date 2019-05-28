@@ -13,7 +13,6 @@
     var app = new Vue({
       el: "#distracted-app",
       data: {
-        searchQuery: ""
       },
       methods: {
       },
